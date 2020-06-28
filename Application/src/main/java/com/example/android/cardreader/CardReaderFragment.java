@@ -33,15 +33,17 @@ import com.example.android.common.logger.Log;
 public class CardReaderFragment extends Fragment implements LoyaltyCardReader.AccountCallback {
 
     public static final String TAG = "CardReaderFragment";
+
     // Recommend NfcAdapter flags for reading from other Android devices. Indicates that this
     // activity is interested in NFC-A devices (including other Android devices), and that the
     // system should not check for the presence of NDEF-formatted data (e.g. Android Beam).
-    public static int READER_FLAGS =
-            NfcAdapter.FLAG_READER_NFC_A | NfcAdapter.FLAG_READER_SKIP_NDEF_CHECK;
+    public static int READER_FLAGS = NfcAdapter.FLAG_READER_NFC_A | NfcAdapter.FLAG_READER_SKIP_NDEF_CHECK;
     public LoyaltyCardReader mLoyaltyCardReader;
     private TextView mAccountField;
 
-    /** Called when sample is created. Displays generic UI with welcome text. */
+    /**
+     * Called when sample is created. Displays generic UI with welcome text.
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -97,8 +99,7 @@ public class CardReaderFragment extends Fragment implements LoyaltyCardReader.Ac
 
     @Override
     public void onAccountReceived(final String account) {
-        // This callback is run on a background thread, but updates to UI elements must be performed
-        // on the UI thread.
+        // This callback is run on a background thread, but updates to UI elements must be performed on the UI thread.
         getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {

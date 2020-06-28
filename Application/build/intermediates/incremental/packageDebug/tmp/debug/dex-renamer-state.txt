@@ -1,0 +1,4 @@
+#Sat Jun 27 09:05:01 CAT 2020
+base.0=D\:\\tutorials\\android\\android-CardReader\\Application\\build\\intermediates\\dex\\debug\\out\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
